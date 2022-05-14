@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{113250CA-83FC-4383-991D-E2E5D9446CAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ludo</RootNamespace>
+    <AssemblyName>Ludo</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core">
+      <HintPath>..\..\bUNIFU\Bunifu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\Dice.cs" />
+    <Compile Include="AudioPlayer.cs" />
+    <Compile Include="Constants\ColorConstants.cs" />
+    <Compile Include="Constants\DiceConstants.cs" />
+    <Compile Include="Constants\HomeConstants.cs" />
+    <Compile Include="Constants\PawnConstants.cs" />
+    <Compile Include="Constants\PlayerConstants.cs" />
+    <Compile Include="Constants\PlaygroundConstants.cs" />
+    <Compile Include="Constants\TokenConstants.cs" />
+    <Compile Include="Constants\WheelConstants.cs" />
+    <Compile Include="Contracts\IDice.cs" />
+    <Compile Include="Contracts\IPawn.cs" />
+    <Compile Include="Enumerations\ColorType.cs" />
+    <Compile Include="Enumerations\FieldType.cs" />
+    <Compile Include="Enumerations\GameStateType.cs" />
+    <Compile Include="Enumerations\WheelType.cs" />
+    <Compile Include="Exceptions\InvalidNameException.cs" />
+    <Compile Include="Exceptions\InvalidPlayerCountException.cs" />
+    <Compile Include="Extensions\HomeExtensions.cs" />
+    <Compile Include="Models\About\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\About\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dices\DiceCatapult.cs" />
+    <Compile Include="Models\Dices\DiceMama.cs" />
+    <Compile Include="Models\Dices\DiceNine.cs" />
+    <Compile Include="Models\Dices\DiceStandart.cs" />
+    <Compile Include="Models\Field.cs" />
+    <Compile Include="Models\GameSettings\GameSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\GameSettings\GameSettings.Designer.cs">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Game\Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Game\Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Game\GameState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Game\GameStateMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Game\GameUtils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Game\GameWheelResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Home.cs" />
+    <Compile Include="Models\Pawn.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Playground.cs" />
+    <Compile Include="Models\Wheel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Models\About\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\GameSettings\GameSettings.resx">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Game\Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PawnYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BtnAboutGlow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BtnAbout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BtnExit.png" />
+    <None Include="Images\BtnExitGlow.png" />
+    <None Include="Images\BtnStartGlow.png" />
+    <None Include="Images\BtnStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayGround.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pawn-Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PawnRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pawn.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Standart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigMama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catapult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CatapultDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NineDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandartDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigMamaDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PawnBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PawnGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelTurn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelBomb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelCatapult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelMama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelMiss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelSleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelSwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ludo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TokenBomb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TokenCatapult.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TokenSleep.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelFlicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Check.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Click.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Hover.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PlaceBomb.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PlaceCatapult.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PlacePillow.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\StartGame.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\WheelClick.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\TurnOn.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Explode.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Military.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Snore.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Yeah.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\CatapultEject.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Sleep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Switch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Catapult.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PowerDown.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\CatapultLoad.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PawnClick.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step8wav.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\EvilLaugh.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\co-ca-ngua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\co-ca-ngua1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanhla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanhla1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanhla2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanhla3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-do.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-do1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-do2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-do3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanh2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-xanh3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-vang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-vang1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-vang2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngua-vang3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\co-ca-ngua2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\co-ca-ngua3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
